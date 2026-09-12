@@ -1,0 +1,192 @@
+/* ═══════════════════════════════════════════════════════
+   hud.css — Authentic Minecraft HUD
+   Pixel-perfect hotbar, XP bar, hearts, hunger, F3
+   ═══════════════════════════════════════════════════════ */
+
+/* ── HUD Container ── */
+#hud {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  pointer-events: none;
+  font-family: var(--font-mc);
+}
+
+#hud > * {
+  pointer-events: auto;
+}
+
+/* ── Hotbar (Authentic MC Style) ── */
+.hotbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--hotbar-slot-gap);
+  padding: 4px;
+  position: absolute;
+  bottom: 24px; /* Increased to make room for hints */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 30, 0.85);
+  border: 2px solid #000000;
+  box-shadow:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hotbar-slot {
+  width: var(--hotbar-slot-size);
+  height: var(--hotbar-slot-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(140, 140, 140, 0.6);
+  border: 2px solid #000000;
+  box-shadow: 
+    inset 2px 2px 0 rgba(0, 0, 0, 0.6),
+    inset -2px -2px 0 rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  position: relative;
+}
+
+.hotbar-slot:hover {
+  background: rgba(160, 160, 160, 0.8);
+}
+
+/* Active slot: thick white border overlapping adjacent slots */
+.hotbar-slot.active {
+  border: 2px solid #ffffff;
+  box-shadow:
+    0 0 0 2px #000000,
+    inset 0 0 6px rgba(255, 255, 255, 0.15);
+  z-index: 2;
+}
+
+.hotbar-slot img {
+  width: 30px;
+  height: 30px;
+  image-rendering: pixelated;
+}
+
+/* ── Slot Numbers ── */
+.hotbar-slot-num {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  font-size: 0.6rem;
+  color: var(--mc-text);
+  text-shadow: 1px 1px 0 #000;
+  z-index: 3;
+}
+
+/* ── Keyboard Hints ── */
+.hotbar-hints {
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.55rem;
+  color: var(--mc-text-dim);
+  text-shadow: 1px 1px 0 #000;
+}
+
+.hotbar-hints span {
+  color: var(--mc-text);
+}
+
+/* ── XP Bar (Segmented Green) ── */
+.xp-bar-container {
+  position: absolute;
+  /* hotbar is 24px bottom + slot size + borders (approx 6px) = 30px + size. */
+  bottom: calc(30px + var(--hotbar-slot-size));
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(9 * var(--hotbar-slot-size) + 16px); /* 9 slots + 8 gaps (2px each) */
+  height: 10px;
+  background: #1a1a1a;
+  border: 1px solid;
+  border-color: #0a0a0a #3a3a3a #3a3a3a #0a0a0a;
+  overflow: visible;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to bottom, #80e040, #40a020);
+  transition: width 600ms ease-out;
+}
+
+.xp-bar-level {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem); /* Larger font */
+  color: var(--mc-green-xp);
+  text-shadow:
+    2px 2px 0 #000, -1px -1px 0 #000,
+    2px -1px 0 #000, -1px 2px 0 #000,
+    0 2px 0 #000, 0 -1px 0 #000,
+    2px 0 0 #000, -1px 0 0 #000;
+  font-family: var(--font-mc);
+}
+
+/* ── Hearts Row ── */
+.hearts-row {
+  position: absolute;
+  /* right above XP bar (8px + borders = 10px) */
+  bottom: calc(44px + var(--hotbar-slot-size)); 
+  left: calc(50% - (4.5 * var(--hotbar-slot-size)) - 8px); /* align with left edge of XP */
+  display: flex;
+  gap: 1px;
+}
+
+.heart-icon {
+  width: clamp(18px, 2.5vw, 24px);
+  height: clamp(18px, 2.5vw, 24px);
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: clamp(18px, 2.5vw, 24px);
+  text-align: center;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.8);
+}
+
+/* ── Hunger Row ── */
+.hunger-row {
+  position: absolute;
+  bottom: calc(44px + var(--hotbar-slot-size));
+  right: calc(50% - (4.5 * var(--hotbar-slot-size)) - 8px); /* align with right edge of XP */
+  display: flex;
+  gap: 1px;
+  flex-direction: row-reverse;
+}
+
+.hunger-icon {
+  width: clamp(18px, 2.5vw, 24px);
+  height: clamp(18px, 2.5vw, 24px);
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: clamp(18px, 2.5vw, 24px);
+  text-align: center;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.8);
+}
+
+/* ── F3 Debug Overlay ── */
+.f3-overlay {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 6px 10px;
+  font-family: var(--font-mc);
+  font-size: var(--font-size-f3);
+  color: var(--mc-text);
+  line-height: 1.6;
+  pointer-events: none;
+  white-space: pre;
+}
+
+.f3-overlay.hidden {
+  display: none;
+}

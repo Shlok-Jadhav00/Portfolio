@@ -1,0 +1,109 @@
+/* ═══════════════════════════════════════════════════════
+   about.css — Screen 2: Player Profile
+   Ref: Sanjai Builds — Wide panel on left with two columns, massive character right
+   ═══════════════════════════════════════════════════════ */
+
+.screen-about {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding-left: 6%; /* Replaces left: 6% */
+  box-sizing: border-box;
+}
+
+.about-panel {
+  /* Removed absolute positioning */
+  position: relative;
+  width: clamp(600px, 55vw, 900px); /* Much wider */
+  max-width: 85vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 2;
+  padding: 24px 32px;
+}
+
+.about-panel .mc-panel-title {
+  margin-bottom: 24px;
+}
+
+/* ── Two Column Layout ── */
+.about-layout-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ── Left Column: Avatar ── */
+.about-avatar-box {
+  width: 140px;
+  height: 140px;
+  background: #0a0a0a;
+  border: 3px solid;
+  border-color: #2a2a2a #000 #000 #2a2a2a;
+  box-shadow: inset 2px 2px 8px rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-face {
+  width: 80%;
+  height: 80%;
+  image-rendering: pixelated;
+  object-fit: contain;
+}
+
+/* ── Right Column: Content ── */
+.about-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-bio {
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  color: var(--mc-text);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  text-shadow: 1px 1px 0 var(--mc-text-shadow);
+}
+
+/* ── CSS Grid for perfect stat alignment ── */
+.about-stats {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 12px 32px;
+  margin-bottom: 32px;
+}
+
+.about-stats .mc-stat-row {
+  display: contents; /* Unwraps flex row so label/value join the parent grid */
+}
+
+.about-stats .mc-stat-label {
+  font-weight: bold;
+}
+
+.about-cta {
+  align-self: flex-start;
+  min-width: 200px;
+}
+
+/* ── Massive Character on Right ── */
+.about-character {
+  position: absolute;
+  right: 5%;
+  bottom: 5%; /* Anchor firmly to bottom */
+  height: clamp(350px, 70vh, 900px); /* Massive */
+  image-rendering: pixelated;
+  filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.6));
+  animation: aboutCharIdle 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes aboutCharIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}

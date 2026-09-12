@@ -1,0 +1,126 @@
+/* ═══════════════════════════════════════════════════════
+   skills.css — Screen 3: Enchantment Table
+   Ref: 03-skills.png — Panel on LEFT, shows % number
+   on right of each bar, dual-tone bar colors
+   ═══════════════════════════════════════════════════════ */
+
+.screen-skills {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.skills-panel {
+  position: absolute !important;
+  left: 8vw !important; /* Force to the left edge unconditionally */
+  top: 15vh !important; /* Hard anchor near the top to prevent dropping to bottom */
+  margin: 0 !important; /* Nuke any weird margins */
+  transform: none !important; /* Nuke any broken transforms */
+  width: clamp(500px, 45vw, 700px);
+  max-width: 85vw;
+  max-height: 70vh;
+  overflow-y: auto;
+  z-index: 10;
+  padding: 24px 32px;
+}
+
+.skills-panel .mc-panel-title {
+  margin-bottom: 24px;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Wider gap */
+  padding: 10px 8px; /* More breathing room vertically */
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.skill-row:hover {
+  background: rgba(136, 51, 255, 0.1);
+}
+
+.skill-level {
+  width: 30px;
+  text-align: center;
+  color: #ffffa0; /* Yellow/Gold for Roman Numerals */
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+  flex-shrink: 0;
+}
+
+.skill-name {
+  width: 130px;
+  flex-shrink: 0;
+  font-size: var(--font-size-panel);
+  color: var(--mc-text);
+  text-shadow: 1px 1px 0 var(--mc-text-shadow);
+}
+
+.skill-bar-container {
+  flex: 1;
+  height: 18px; /* Thicker progress bar */
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  transition: width 600ms ease-out;
+}
+
+/* Numeric percentage shown to the right of the bar */
+.skill-percent {
+  width: 40px;
+  text-align: right;
+  font-size: 0.85rem;
+  color: #55ff55; /* Minecraft XP Green */
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+  flex-shrink: 0;
+}
+
+/* Bar colors — dual-tone matching reference (teal + purple gradient) */
+.skill-bar-fill--v { background: linear-gradient(90deg, #20b2aa, #8833ff); }
+.skill-bar-fill--iv { background: linear-gradient(90deg, #20b2aa, #8833ff); opacity: 0.85; }
+.skill-bar-fill--iii { background: linear-gradient(90deg, #20b2aa, #8833ff); opacity: 0.7; }
+.skill-bar-fill--ii { background: linear-gradient(90deg, #20b2aa, #8833ff); opacity: 0.55; }
+.skill-bar-fill--i { background: linear-gradient(90deg, #20b2aa, #8833ff); opacity: 0.4; }
+
+.skills-hint {
+  font-size: 0.7rem;
+  color: var(--mc-text-dim);
+  font-style: italic;
+  margin-top: 12px;
+  text-shadow: 1px 1px 0 var(--mc-text-shadow);
+}
+
+/* ── Enchanting Particles ── */
+.enchant-particles {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.enchant-glyph {
+  position: absolute;
+  font-size: 14px;
+  color: rgba(136, 51, 255, 0.4);
+  animation: glyphFloat 6s linear infinite;
+  pointer-events: none;
+  font-family: var(--font-mc);
+}
+
+@keyframes glyphFloat {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+}

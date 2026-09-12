@@ -1,0 +1,88 @@
+/* ═══════════════════════════════════════════════════════
+   experience.css — Screen 5: Crafting Table
+   Ref: 05-experience.png — Panel LEFT, crafting recipe
+   layout with slots + arrow + description to the right
+   ═══════════════════════════════════════════════════════ */
+
+.screen-experience {
+  align-items: center;
+  position: relative;
+}
+
+.experience-panel {
+  position: absolute;
+  left: 4%;
+  top: 6vh;
+  width: 520px;
+  max-width: 50vw;
+  max-height: 78vh;
+  overflow-y: auto;
+  z-index: 2;
+}
+
+.craft-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.craft-entry:last-child {
+  border-bottom: none;
+}
+
+.craft-recipe {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.craft-input {
+  display: flex;
+  gap: 4px;
+}
+
+.craft-item {
+  width: 36px;
+  height: 36px;
+  background: #1a1a1a;
+  border: 1px solid;
+  border-color: #0a0a0a #3a3a3a #3a3a3a #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.craft-arrow {
+  font-size: 16px;
+  color: var(--mc-text-dim);
+  margin: 0 4px;
+}
+
+.craft-details {
+  flex: 1;
+}
+
+.craft-date {
+  font-size: 0.65rem;
+  color: var(--mc-text-dim);
+  text-shadow: 1px 1px 0 var(--mc-text-shadow);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.craft-title {
+  font-size: var(--font-size-panel);
+  color: var(--mc-text);
+  text-shadow: 1px 1px 0 var(--mc-text-shadow);
+  margin-bottom: 2px;
+}
+
+.craft-org {
+  font-size: 0.72rem;
+  color: var(--mc-text-dim);
+  line-height: 1.3;
+}

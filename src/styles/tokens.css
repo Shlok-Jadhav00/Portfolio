@@ -1,0 +1,68 @@
+/* ═══════════════════════════════════════════════════════
+   tokens.css — Minecraft Portfolio Design Tokens
+   CSS custom properties: colors, fonts, spacing
+   ═══════════════════════════════════════════════════════ */
+
+/* Monocraft font — place Monocraft.ttf in public/fonts/ */
+@font-face {
+  font-family: 'Monocraft';
+  src: url('/fonts/Monocraft.ttf') format('truetype');
+  font-display: swap;
+}
+
+:root {
+  /* ── Backgrounds ── */
+  --mc-panel-bg:        rgba(0, 0, 0, 0.72);
+  --mc-panel-border-lt: #ffffff44;
+  --mc-panel-border-dk: #00000088;
+
+  /* ── Text ── */
+  --mc-text:            #ffffff;
+  --mc-text-dim:        #aaaaaa;
+  --mc-text-shadow:     #3f3f3f;
+
+  /* ── Minecraft Palette ── */
+  --mc-green-xp:        #7af850;
+  --mc-red-hearts:      #ff0000;
+  --mc-hunger:          #da7a00;
+  --mc-emerald:         #17dd62;
+  --mc-diamond:         #4af4f4;
+  --mc-gold:            #ffcc00;
+  --mc-redstone:        #ff2020;
+  --mc-enchant-purple:  #8833ff;
+  --mc-enchant-teal:    #20b2aa;
+
+  /* ── Hotbar ── */
+  --hotbar-slot-size:   clamp(44px, 4.5vw, 64px);
+  --hotbar-slot-gap:    0px;
+  --hotbar-active:      #ffffffcc;
+
+  /* ── Typography ── */
+  --font-mc:            'Monocraft', monospace;
+  --font-size-title:    clamp(2rem, 5vw, 4rem);
+  --font-size-panel:    clamp(0.75rem, 1.5vw, 1rem);
+  --font-size-f3:       0.65rem;
+  --font-size-small:    0.7rem;
+  --font-size-tooltip:  0.8rem;
+
+  /* ── Spacing ── */
+  --spacing-xs:         4px;
+  --spacing-sm:         8px;
+  --spacing-md:         12px;
+  --spacing-lg:         16px;
+  --spacing-xl:         24px;
+  --spacing-2xl:        32px;
+
+  /* ── Transition ── */
+  --transition-fast:    150ms ease;
+  --transition-normal:  300ms ease;
+  --transition-slow:    500ms ease;
+
+  /* ── Status Colors ── */
+  --status-built:       #17dd62;
+  --status-learning:    #ffcc00;
+  --status-planned:     #aaaaaa;
+  --status-complete:    #17dd62;
+  --status-in-progress: #ffcc00;
+  --status-locked:      #666666;
+}

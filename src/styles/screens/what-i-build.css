@@ -1,0 +1,140 @@
+/* ═══════════════════════════════════════════════════════
+   what-i-build.css — Screen 7: Villager Trades
+   Ref: 07-services.png — Panel LEFT, trade rows with
+   emerald costs, "In stock"/"Limited" status,
+   stats bar at bottom, "Make an Offer" CTA
+   ═══════════════════════════════════════════════════════ */
+
+.screen-what-i-build {
+  align-items: center;
+  position: relative;
+}
+
+.wib-panel {
+  position: absolute;
+  left: 4%;
+  top: 6vh;
+  width: 460px;
+  max-width: 46vw;
+  max-height: 78vh;
+  overflow-y: auto;
+  z-index: 2;
+}
+
+/* Title + profession header */
+.wib-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.wib-profession {
+  font-size: 0.7rem;
+  color: var(--mc-text-dim);
+  text-shadow: 1px 1px 0 var(--mc-text-shadow);
+}
+
+.wib-capability {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.wib-capability:hover {
+  background: rgba(23, 221, 98, 0.06);
+}
+
+.wib-cap-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+}
+
+.wib-cap-info {
+  flex: 1;
+}
+
+.wib-cap-name {
+  font-size: var(--font-size-panel);
+  color: var(--mc-text);
+  text-shadow: 1px 1px 0 var(--mc-text-shadow);
+  margin-bottom: 1px;
+}
+
+.wib-cap-desc {
+  font-size: 0.7rem;
+  color: var(--mc-text-dim);
+  line-height: 1.3;
+}
+
+.wib-cap-stack {
+  font-size: 0.6rem;
+  color: var(--mc-diamond);
+}
+
+/* Stats bar at bottom */
+.wib-stats-bar {
+  display: flex;
+  gap: 0;
+  margin-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.wib-stat {
+  flex: 1;
+  text-align: center;
+  padding: 10px 4px;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.7rem;
+  color: var(--mc-text-dim);
+  text-shadow: 1px 1px 0 var(--mc-text-shadow);
+}
+
+.wib-stat:last-child {
+  border-right: none;
+}
+
+.wib-stat-value {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--mc-text);
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+/* Villager NPC */
+.wib-villager {
+  position: absolute;
+  right: 8%;
+  bottom: 12%;
+  height: clamp(160px, 28vh, 240px);
+  image-rendering: pixelated;
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.5));
+  animation: villagerBob 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes villagerBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.wib-character {
+  position: absolute;
+  right: 22%;
+  bottom: 10%;
+  height: clamp(180px, 30vh, 260px);
+  image-rendering: pixelated;
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.5));
+  z-index: 1;
+}
+
+.wib-cta {
+  margin-top: 10px;
+}

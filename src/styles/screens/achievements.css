@@ -1,0 +1,93 @@
+/* ═══════════════════════════════════════════════════════
+   achievements.css — Screen 6: Advancements
+   Ref: 06-achievements.png — Panel on RIGHT side,
+   golden icon frames, green check marks, locked row faded
+   ═══════════════════════════════════════════════════════ */
+
+.screen-achievements {
+  align-items: center;
+  position: relative;
+}
+
+.achievements-panel {
+  position: absolute !important;
+  left: auto !important;
+  right: 4% !important;
+  top: 6vh;
+  width: 400px;
+  max-width: 42vw;
+  max-height: 78vh;
+  overflow-y: auto;
+  z-index: 2;
+}
+
+.achievement-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background var(--transition-fast);
+}
+
+.achievement-row:hover {
+  background: rgba(122, 248, 80, 0.05);
+}
+
+.achievement-row--locked {
+  opacity: 0.35;
+}
+
+/* Golden frame around achievement icon (matching reference) */
+.achievement-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  border: 2px solid var(--mc-gold);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.achievement-row--locked .achievement-icon {
+  border-color: var(--status-locked);
+  filter: grayscale(0.8);
+}
+
+.achievement-info {
+  flex: 1;
+}
+
+.achievement-title {
+  font-size: var(--font-size-panel);
+  color: var(--mc-text);
+  text-shadow: 1px 1px 0 var(--mc-text-shadow);
+  margin-bottom: 2px;
+}
+
+.achievement-desc {
+  font-size: 0.72rem;
+  color: var(--mc-text-dim);
+  line-height: 1.3;
+}
+
+.achievement-check {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+.achievement-check--done {
+  color: var(--mc-green-xp);
+}
+
+.achievement-check--locked {
+  color: var(--status-locked);
+}
+
+.achievements-cta {
+  margin-top: 16px;
+  text-align: center;
+}

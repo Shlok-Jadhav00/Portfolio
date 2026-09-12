@@ -1,0 +1,107 @@
+/* ═══════════════════════════════════════════════════════
+   contact.css — Screen 8: Written Book (Let's Connect)
+   Ref: 08-contact.png — LIGHT cream/parchment colored panel
+   on LEFT side, dark text, dotted separators, "To The End" CTA
+   ═══════════════════════════════════════════════════════ */
+
+.screen-contact {
+  align-items: center;
+  position: relative;
+}
+
+/* Override mc-panel dark style for book look */
+.contact-panel {
+  position: absolute;
+  left: 4%;
+  top: 6vh;
+  width: 420px;
+  max-width: 42vw;
+  z-index: 2;
+  /* Parchment/book colors — overrides .mc-panel */
+  background: #e8dcc4 !important;
+  border-color: #a08860 #6b5a3c #6b5a3c #a08860 !important;
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.3),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.1),
+    0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+.contact-panel .mc-panel-title {
+  color: #2a1a0a;
+  text-shadow: none;
+}
+
+.contact-tagline {
+  font-size: 0.8rem;
+  color: #5a4a30;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 8px;
+  border-bottom: 1px dotted #c0aa80;
+}
+
+.contact-row:last-of-type {
+  border-bottom: none;
+}
+
+.contact-row:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.contact-row a {
+  color: #2a5a8a;
+  transition: color var(--transition-fast);
+}
+
+.contact-row a:hover {
+  color: #1a3a5a;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-label {
+  font-size: 0.6rem;
+  color: #8a7a5a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-value {
+  font-size: var(--font-size-panel);
+  color: #2a1a0a;
+  text-shadow: none;
+}
+
+.contact-page {
+  font-size: 0.7rem;
+  color: #8a7a5a;
+  text-align: right;
+  margin-top: 16px;
+  padding-top: 10px;
+  border-top: 1px dotted #c0aa80;
+}
+
+.contact-cta {
+  margin-top: 12px;
+}
+
+/* CTA button also needs dark styling on light bg */
+.contact-panel .mc-btn {
+  background: #8b8b8b;
+  color: #fff;
+}

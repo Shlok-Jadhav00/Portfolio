@@ -1,0 +1,140 @@
+/* ═══════════════════════════════════════════════════════
+   panels.css — Authentic Minecraft Panel & Button Styles
+   Pixel-perfect recreation of in-game UI elements
+   ═══════════════════════════════════════════════════════ */
+
+/* ── MC Panel (Inventory / Menu Background) ── */
+.mc-panel {
+  background: rgba(0, 0, 0, 0.75);
+  /* Minecraft bevel: light top-left, dark bottom-right */
+  border: 3px solid;
+  border-color: #5a5a5a #1a1a1a #1a1a1a #5a5a5a;
+  /* Inner bevel via box-shadow */
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.12),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.25),
+    0 4px 16px rgba(0, 0, 0, 0.5);
+  padding: 16px 20px;
+  font-family: var(--font-mc);
+  color: var(--mc-text);
+  image-rendering: pixelated;
+}
+
+.mc-panel-title {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  text-shadow: 2px 2px 0 var(--mc-text-shadow);
+  margin-bottom: var(--spacing-md);
+  color: var(--mc-text);
+  font-weight: normal;
+}
+
+/* ── MC Button (Authentic Stone Button) ──
+   Exact Minecraft button: #8b8b8b base, white top-left bevel,
+   #373737 bottom-right, hover goes lighter, active inverts bevel */
+.mc-btn {
+  background: #7a7a7a;
+  border: 2px solid #000000;
+  box-shadow: 
+    inset 2px 2px 0px #ffffff,
+    inset -2px -2px 0px #555555;
+  color: #ffffff;
+  font-family: var(--font-mc);
+  font-size: var(--font-size-panel);
+  cursor: pointer;
+  text-shadow: 2px 2px 0 #333333;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  line-height: 1;
+  transition: none;
+  image-rendering: pixelated;
+}
+
+.mc-btn:hover {
+  background: #8a8a8a;
+  box-shadow: 
+    inset 2px 2px 0px #ffffff,
+    inset -2px -2px 0px #555555;
+  color: #ffffa0;
+  text-shadow: 2px 2px 0 #4a4a00;
+}
+
+.mc-btn:active {
+  background: #6d6d6d;
+  box-shadow: 
+    inset 2px 2px 0px #555555,
+    inset -2px -2px 0px #ffffff;
+  padding-top: 4px;
+  padding-left: 4px;
+}
+
+/* Large button variant (hero menu) */
+.mc-btn--lg {
+  width: 400px;
+  max-width: 80vw;
+  height: 48px;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+/* Small button variant */
+.mc-btn--sm {
+  min-height: 32px;
+  padding: 0 16px;
+  font-size: var(--font-size-small);
+}
+
+/* ── MC Stat Row ── */
+.mc-stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: var(--font-size-panel);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mc-stat-label {
+  color: var(--mc-text-dim);
+  text-shadow: 1px 1px 0 var(--mc-text-shadow);
+}
+
+.mc-stat-value {
+  color: var(--mc-text);
+  text-shadow: 1px 1px 0 var(--mc-text-shadow);
+}
+
+/* ── Status Badges ── */
+.mc-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid;
+}
+
+.mc-badge--built {
+  color: var(--status-built);
+  border-color: var(--status-built);
+}
+
+.mc-badge--learning {
+  color: var(--status-learning);
+  border-color: var(--status-learning);
+}
+
+.mc-badge--planned {
+  color: var(--status-planned);
+  border-color: var(--status-planned);
+}
+
+.mc-badge--complete {
+  color: var(--status-complete);
+  border-color: var(--status-complete);
+}
+
+.mc-badge--locked {
+  color: var(--status-locked);
+  border-color: var(--status-locked);
+}

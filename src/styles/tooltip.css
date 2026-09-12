@@ -1,0 +1,53 @@
+/* ═══════════════════════════════════════════════════════
+   tooltip.css — Minecraft Item Tooltip
+   ═══════════════════════════════════════════════════════ */
+
+.mc-tooltip {
+  position: fixed;
+  z-index: 2000;
+  background: rgba(16, 0, 16, 0.94);
+  border: 2px solid;
+  border-color: #5020a0 #28004c #28004c #5020a0;
+  padding: 8px 10px;
+  font-family: var(--font-mc);
+  font-size: var(--font-size-tooltip);
+  color: var(--mc-text);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  max-width: 300px;
+  line-height: 1.5;
+  text-shadow: 1px 1px 0 var(--mc-text-shadow);
+  box-shadow: 0 0 8px rgba(80, 32, 160, 0.3);
+}
+
+.mc-tooltip.visible {
+  opacity: 1;
+}
+
+.mc-tooltip-title {
+  color: var(--mc-text);
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.mc-tooltip-separator {
+  border: none;
+  border-top: 1px solid rgba(128, 64, 200, 0.4);
+  margin: 4px 0;
+}
+
+.mc-tooltip-line {
+  color: var(--mc-text-dim);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.mc-tooltip-line--type { color: var(--mc-text-dim); }
+.mc-tooltip-line--stack { color: var(--mc-diamond); }
+.mc-tooltip-line--status { color: var(--mc-emerald); }
+.mc-tooltip-line--desc {
+  color: var(--mc-text-dim);
+  font-style: italic;
+  margin-top: 4px;
+}

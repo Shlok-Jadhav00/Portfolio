@@ -1,0 +1,129 @@
+/* ═══════════════════════════════════════════════════════
+   hero.css — Screen 1: Main Menu
+   Ref: Sanjai Builds — Absolute positioning layout
+   ═══════════════════════════════════════════════════════ */
+
+.screen-hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+.hero-title-wrap {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.hero-title {
+  font-family: var(--font-mc);
+  font-size: clamp(3rem, 7vw, 6rem); /* Huge */
+  color: var(--mc-text);
+  text-shadow: 6px 6px 0 var(--mc-text-shadow),
+               2px 2px 0 rgba(0, 0, 0, 0.5);
+  letter-spacing: 4px;
+  line-height: 1;
+}
+
+.hero-subtitle {
+  font-family: var(--font-mc);
+  font-size: clamp(0.7rem, 1.2vw, 1.2rem);
+  color: var(--mc-text-dim);
+  text-shadow: 2px 2px 0 var(--mc-text-shadow);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-top: 12px;
+}
+
+/* Splash text positioned above the character */
+.hero-splash {
+  position: absolute;
+  top: 25%;
+  right: 15%;
+  color: var(--mc-gold);
+  font-family: var(--font-mc);
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  text-shadow: 2px 2px 0 #4a4a00;
+  transform: rotate(-12deg);
+  animation: splashBounce 1.5s ease-in-out infinite;
+  transform-origin: center center;
+  white-space: nowrap;
+  z-index: 12;
+}
+
+@keyframes splashBounce {
+  0%, 100% { transform: scale(1) rotate(-12deg); }
+  50% { transform: scale(1.08) rotate(-12deg); }
+}
+
+.hero-menu {
+  position: absolute;
+  top: 26%; /* Top edge of green rectangle */
+  left: 50%; /* Centered horizontally */
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch; /* Make children stretch to fill width */
+  z-index: 10;
+  width: clamp(500px, 50vw, 900px); /* Massive width matching green box */
+  max-width: 90vw;
+}
+
+.hero-menu .mc-btn--lg {
+  width: 100%;
+  max-width: none;
+  height: clamp(50px, 6.5vh, 80px); /* Taller buttons to fill vertical space */
+  font-size: clamp(1.2rem, 2vw, 1.6rem); /* Scale up text to match larger buttons */
+}
+
+.hero-hint {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-mc);
+  margin-top: 8px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Two-button row for Contact + The End side by side */
+.hero-menu-row {
+  display: flex;
+  gap: 12px; /* Match vertical gap */
+  width: 100%;
+}
+
+.hero-menu-row .mc-btn--lg {
+  flex: 1;
+  width: auto;
+}
+
+.hero-character {
+  position: absolute;
+  right: 12%;
+  bottom: 12%;
+  height: clamp(300px, 60vh, 800px); /* Massive */
+  image-rendering: pixelated;
+  filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.6));
+  animation: heroCharIdle 3s ease-in-out infinite;
+  z-index: 5;
+}
+
+@keyframes heroCharIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.hero-disclaimer {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-size: 0.5rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: var(--font-mc);
+  z-index: 20;
+}
