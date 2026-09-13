@@ -57,10 +57,10 @@ const config = {
     bio: '[PLACEHOLDER — replace with a verified 2-3 sentence bio]',
 
     stats: [
-      { label: 'Class',  value: '[PLACEHOLDER — verified role tagline]' },
+      { label: 'Class',  value: 'Frontend developer, Game devs and AI creater. I build digital experience that are funcational with memoriable impact.' },
       { label: 'Level',  value: '3rd Year — B.Tech Information Technology' },
       { label: 'Spawn',  value: 'Nashik, Maharashtra, India' },
-      { label: 'Status', value: '[PLACEHOLDER — verified current status]' },
+      { label: 'Status', value: 'Student at MIT AOE ' },
     ],
 
     cta: {
