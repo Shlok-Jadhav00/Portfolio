@@ -328,8 +328,8 @@ const config = {
     links: [
       { icon: '✉', label: 'Email', value: 'shlokjadhav3107@gmail.com', href: 'mailto:shlokjadhav3107@gmail.com' },
       { icon: '📍', label: 'Location', value: 'Nashik, Maharashtra, India', href: null },
-      { icon: '🐙', label: 'GitHub', value: 'Shlok-Jadhav00', href: 'www.github.com/Shlok-Jadhav00' },
-      { icon: '💼', label: 'LinkedIn', value: 'Shlok Jadhav', href: 'www.linkedin.com/in/shlok-jadhav-' },
+      { icon: '🐙', label: 'GitHub', value: 'Shlok-Jadhav00', href: 'https://github.com/Shlok-Jadhav00' },
+      { icon: '💼', label: 'LinkedIn', value: 'Shlok Jadhav', href: 'https://linkedin.com/in/shlok-jadhav-' },
       { icon: '🐦', label: 'Twitter/X', value: '[PLACEHOLDER — remove if not used]', href: '#' },
     ],
 
