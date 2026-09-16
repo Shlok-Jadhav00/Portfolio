@@ -51,13 +51,13 @@ const config = {
     background: '/bg/bg-02-about.jpg',
     video: '/bg/bg-02-about.mp4',
     biome: 'Cherry Grove',
-    face: '/skin/face.png',
+    face: '/skin/face.jpeg',
     character: '/skin/character.png',
 
-    bio: '[PLACEHOLDER — replace with a verified 2-3 sentence bio]',
+    bio: 'Frontend developer, Game devs and AI creater. I build digital experience that are funcational with memoriable impact.',
 
     stats: [
-      { label: 'Class', value: 'Frontend developer, Game devs and AI creater. I build digital experience that are funcational with memoriable impact.' },
+      { label: 'Class', value: 'Student, Game Devs, AI' },
       { label: 'Level', value: '3rd Year — B.Tech Information Technology' },
       { label: 'Spawn', value: 'Nashik, Maharashtra, India' },
       { label: 'Status', value: 'Student at MIT AOE ' },
@@ -65,7 +65,7 @@ const config = {
 
     cta: {
       label: 'View on GitHub',
-      url: '#',
+      url: 'https://www.github.com/Shlok-Jadhav00',
     },
   },
 
@@ -405,10 +405,15 @@ const config = {
     },
 
     sounds: {
-      enabled: false,         // Set true once you add sound files
+      enabled: true,
       click: '/sounds/click.mp3',
       levelup: '/sounds/levelup.mp3',
       toast: '/sounds/toast.mp3',
+      playlist: [
+        { name: 'Sweden', path: '/sounds/music-1.mp3' },
+        { name: 'Subwoofer Lullaby', path: '/sounds/music-2.mp3' },
+        { name: 'Minecraft', path: '/sounds/music-3.mp3' },
+      ],
     },
   },
 

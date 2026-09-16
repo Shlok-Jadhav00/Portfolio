@@ -36,6 +36,10 @@ import { initToast } from './hud/toast.js';
 // ── Components ──
 import { initModal } from './components/modal.js';
 import { initMinigame } from './components/minigame.js';
+import { initJukebox } from './components/jukebox.js';
+
+// ── Audio ──
+import { initAudio } from './utils/audio.js';
 
 // ── Router ──
 import { initRouter, goTo } from './router.js';
@@ -66,6 +70,12 @@ function boot() {
 
   // Initialize minigame
   initMinigame(config);
+
+  // Initialize audio (music playlist + click sounds)
+  initAudio(config);
+
+  // Initialize jukebox UI (J key)
+  initJukebox();
 
   // Initialize router (mounts first screen)
   initRouter(screenContainer, config);

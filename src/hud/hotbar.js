@@ -63,7 +63,7 @@ export function initHotbar(container, config, navigateFn) {
   // Keyboard hints bar at very bottom
   const hintsEl = document.createElement('div');
   hintsEl.className = 'hotbar-hints no-select';
-  hintsEl.innerHTML = `<span>1-9</span> select &nbsp;|&nbsp; <span>← →</span> cycle &nbsp;|&nbsp; <span>M</span> mine &nbsp;|&nbsp; <span>Esc</span> home &nbsp;|&nbsp; <span>F3</span> debug`;
+  hintsEl.innerHTML = `<span>1-9</span> select &nbsp;|&nbsp; <span>← →</span> cycle &nbsp;|&nbsp; <span>M</span> mine &nbsp;|&nbsp; <span>J</span> jukebox &nbsp;|&nbsp; <span>Esc</span> home &nbsp;|&nbsp; <span>F3</span> debug`;
   container.appendChild(hintsEl);
 
   setActive(0);

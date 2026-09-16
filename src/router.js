@@ -11,6 +11,7 @@ import { setBiome } from './hud/f3-overlay.js';
 import { showToast } from './hud/toast.js';
 import { isModalOpen } from './components/modal.js';
 import { isMinigameOpen } from './components/minigame.js';
+import { isJukeboxOpen } from './components/jukebox.js';
 
 // Screen modules
 import * as hero from './screens/hero.js';
@@ -45,8 +46,8 @@ export function initRouter(container, cfg) {
 }
 
 function handleKeyDown(e) {
-  // Don't navigate if modal or minigame is open
-  if (isModalOpen() || isMinigameOpen()) return;
+  // Don't navigate if modal, minigame, or jukebox is open
+  if (isModalOpen() || isMinigameOpen() || isJukeboxOpen()) return;
 
   const key = e.key;
 
