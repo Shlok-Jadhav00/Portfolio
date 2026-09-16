@@ -39,7 +39,6 @@ export function mount(container, screenConfig, config, navigate) {
     </div>
     <img class="wib-villager pixelated" src="${screenConfig.villager}" alt="Villager NPC"
          onerror="this.style.display='none';" />
-    <img class="wib-character pixelated" src="${screenConfig.character}" alt="" onerror="this.style.display='none'" />
   `;
 
   mountBackground(container, screenConfig);

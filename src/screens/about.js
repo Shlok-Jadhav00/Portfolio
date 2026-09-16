@@ -34,7 +34,6 @@ export function mount(container, screenConfig, config, navigate) {
         </div>
       </div>
     </div>
-    <img class="about-character pixelated" src="${screenConfig.character}" alt="" onerror="this.style.display='none'" />
   `;
 
   mountBackground(container, screenConfig);

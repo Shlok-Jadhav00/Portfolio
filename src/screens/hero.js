@@ -42,7 +42,6 @@ export function mount(container, screenConfig, config, navigate) {
       ${buttonsHTML}
       <p class="hero-hint">Press 1-9 or click the hotbar : M to mine</p>
     </nav>
-    <img class="hero-character pixelated" src="${screenConfig.character}" alt="" onerror="this.style.display='none'" />
     <p class="hero-disclaimer">${screenConfig.disclaimer}</p>
   `;
 

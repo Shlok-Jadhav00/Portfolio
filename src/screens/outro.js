@@ -13,7 +13,6 @@ export function mount(container, screenConfig, config, navigate) {
   ).join('');
 
   container.innerHTML = `
-    <img class="outro-character pixelated" src="${screenConfig.character}" alt="" onerror="this.style.display='none'" />
     <div class="outro-content">
       <p class="outro-eyebrow">${screenConfig.eyebrow}</p>
       <h1 class="outro-title">${screenConfig.title}</h1>
