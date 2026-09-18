@@ -5,6 +5,7 @@
  */
 
 import { mountBackground, unmountBackground } from '../utils/background.js';
+import { openMinigame } from '../components/minigame.js';
 
 export function mount(container, screenConfig, config, navigate) {
   container.classList.add('screen-hero');
@@ -51,7 +52,11 @@ export function mount(container, screenConfig, config, navigate) {
   container.querySelectorAll('.mc-btn[data-screen]').forEach(btn => {
     btn.addEventListener('click', () => {
       const targetScreen = parseInt(btn.dataset.screen);
-      if (navigate) navigate(targetScreen);
+      if (targetScreen === 9) {
+        openMinigame();
+      } else if (navigate) {
+        navigate(targetScreen);
+      }
     });
   });
 }

@@ -120,7 +120,7 @@ const config = {
         contribution: '[PLACEHOLDER — describe your verified contribution]',
         status: 'in-progress',
         desc: 'Fully offline Windows desktop app for avionics/aerospace data analysis. Ingests engineering datasets, runs Explainable AI (no LLMs, no GPU), exports PDF reports.',
-        github: '#',
+        github: 'https://github.com/Shlok-Jadhav00/AEIA',
         live: null,
       },
       {
@@ -389,7 +389,7 @@ const config = {
     // One entry per screen (9 total, in order)
     hotbarSlots: [
       { icon: '/icons/hotbar/01-book.svg', label: 'Home' },
-      { icon: '/icons/hotbar/02-head.svg', label: 'About' },
+      { icon: '/icons/hotbar/02-head.png', label: 'About' },
       { icon: '/icons/hotbar/03-enchbook.svg', label: 'Skills' },
       { icon: '/icons/hotbar/04-chest.svg', label: 'Projects' },
       { icon: '/icons/hotbar/05-clock.svg', label: 'Experience' },
