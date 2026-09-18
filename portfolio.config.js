@@ -13,7 +13,7 @@ const config = {
   // META
   // ─────────────────────────────────────────────────
   meta: {
-    name: 'Shlok Builds',
+    name: 'Shlok JAdhav',
     version: 'v1.0.0',
     subtitle: 'SURVIVAL · HARD MODE',
     siteTitle: 'Shlok Builds — Portfolio',
@@ -27,7 +27,7 @@ const config = {
   // SCREEN 1 — HERO
   // ─────────────────────────────────────────────────
   hero: {
-    title: 'Shlok Builds',
+    title: 'My World',
     subtitle: 'SURVIVAL · HARD MODE',
     background: '/bg/bg-01-hero.jpg',
     video: '/bg/bg-01-hero.mp4',       // Drop your .mp4 here for live bg
@@ -330,7 +330,7 @@ const config = {
       { icon: '📍', label: 'Location', value: 'Nashik, Maharashtra, India', href: null },
       { icon: '🐙', label: 'GitHub', value: 'Shlok-Jadhav00', href: 'https://github.com/Shlok-Jadhav00' },
       { icon: '💼', label: 'LinkedIn', value: 'Shlok Jadhav', href: 'https://linkedin.com/in/shlok-jadhav-' },
-      { icon: '🐦', label: 'Twitter/X', value: '[PLACEHOLDER — remove if not used]', href: '#' },
+      { icon: '🐦', label: 'Twitter/X', value: '[Not yet]', href: '#' },
     ],
 
     cta: {
